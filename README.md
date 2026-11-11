@@ -11,12 +11,20 @@
 
 ## 安装
 
+从 GitHub 装：
+
 ```powershell
-cd C:\Users\aaaa\.dsh\profiles\web
+cd $env:USERPROFILE\.dsh\profiles\web
+pnpm add git+https://github.com/yiusnio/dsh-paper2md.git
+```
+
+或者从本地克隆/源码目录装：
+
+```powershell
 pnpm add file:C:/path/to/paper2md-plugin
 ```
 
-然后把 `"dsh-paper2md"` 追加到该 `package.json` 的 `dsh.profile.bundles` 数组，重启 dsh。
+然后把 `"dsh-paper2md"` 追加到该 `package.json` 的 `dsh.profile.bundles` 数组，重启 dsh。重启后打开 设置 → 「论文转 Markdown」，粘上 MinerU Key 就能用。
 
 插件自身的依赖（`@deepseek-ai/dsh-tools` 等）由宿主提供，不需要声明。开发期如果直接改源码，把 `profiles/web/node_modules/dsh-paper2md` 换成指向源码目录的 Junction 即可热更新；`pnpm install` 会把它还原成拷贝。
 
