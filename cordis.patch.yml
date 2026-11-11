@@ -1,0 +1,11 @@
+# dsh-paper2md bundle patch: inserts the host-side plugin row into the web
+# profile roster. Applied as a profile bundle layer (`dsh.bundle.patch`).
+#
+# The plugin mounts:
+#   - agent tools: paper_to_md / paper_task_status / paper_list / paper_config_status
+#   - routes:      /api/dsh-paper2md/status, token, clear, papers
+#   - a settings page ("论文转 Markdown") in the Web GUI
+#   - one system-prompt section that tells the agent to convert papers first
+- insert:
+    - id: paper2md
+      name: 'dsh-paper2md'
